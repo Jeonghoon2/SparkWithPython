@@ -21,7 +21,7 @@ class table_exists_test(unittest.TestCase):
         self.spark.stop()
 
     def test_table_correct(self):
-        df = read(self.spark, "../data/SamepleDataA.json", "2024-01-24", "18")
+        df = read(self.spark, "../../data/SampleDataA.json", "2024-01-24", "18")
         write(df, self.table_name)
 
         df.show()
@@ -41,8 +41,8 @@ class ingest_test(unittest.TestCase):
 
         table_name = "log_ingest"
         data_samples = [
-            "../data/SamepleDataB.json",
-            "../data/SamepleDataC.json"
+            "../data/SampleDataB.json",
+            "../data/SampleDataC.json"
         ]
 
         for idx, data_sample in enumerate(data_samples):
